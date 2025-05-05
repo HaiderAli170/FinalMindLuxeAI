@@ -147,25 +147,7 @@ const DashboardPage = async () => {
             </Link>
           </MagicCard>
 
-          <MagicCard
-            color="rgba(99,102,241,.08)"
-            className="border-2 border-indigo-100 max-w-full w-full"
-          >
-            <Link
-              href="/dashboard/music"
-              className="flex items-center justify-between w-full bg-background group p-4"
-            >
-              <div className="space-y-0.5">
-                <h5 className="font-medium text-[1.2rem] mb-2 text-indigo-500">
-                  Music for Wellness
-                </h5>
-                <p className=" text-xs md:text-[13px] dark:text-slate-500 text-neutral-600">
-                  Explore Music that makes you calm
-                </p>
-              </div>
-              <Music className="w-8 h-8 text-indigo-500 group-hover:scale-105 transition transform" />
-            </Link>
-          </MagicCard>
+        
           <MagicCard
             color="rgba(99,102,241,.08)"
             className="border-2 border-indigo-100 max-w-full w-full"
@@ -189,7 +171,7 @@ const DashboardPage = async () => {
           
         </div>
 
-        <div className="flex flex-col items-start w-full">
+        <div className="flex flex-col max-w-7xl items-start w-full">
           <h3 className="text-xl font-semibold">Health Recommendations</h3>
           <div className=" w-full mt-7">
             <Recommendations

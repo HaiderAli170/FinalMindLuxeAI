@@ -34,7 +34,6 @@ const SignInPage = () => {
     setIsLoading(true);
 
     try {
-      console.log("Hi", email, password);
       const signInAttempt = await signIn.create({
         identifier: email,
         password,
@@ -43,7 +42,20 @@ const SignInPage = () => {
 
       if (signInAttempt.status === "complete") {
         await setActive({ session: signInAttempt.createdSessionId });
-        router.push("/dashboard");
+        
+        // Check if user is admin
+        try {
+          const response = await fetch('/api/check-admin');
+          const data = await response.json();
+          if (data.isAdmin) {
+            router.push("/dashboard/admin");
+          } else {
+            router.push("/dashboard");
+          }
+        } catch (error) {
+          console.error('Error checking admin status:', error);
+          router.push("/dashboard");
+        }
       } else {
         console.error(JSON.stringify(signInAttempt, null, 2));
         toast.error("Invalid email or password. Please try again.");
@@ -76,7 +88,7 @@ const SignInPage = () => {
         className={buttonVariants({
           size: "sm",
          
-          className: "absolute top-4 left-4",
+          className: "fixed top-4 left-4 cursor-pointer z-50",
         })}
       >
         <ArrowLeftIcon className="w-4 h-4 mr-1" />
@@ -177,7 +189,7 @@ const SignInPage = () => {
       </section>
 
       <Image
-        src="/images/loginImage.jpg"
+        src="/images/loginImage.png"
         height={1000}
         width={1000}
         alt="Women Image ! "

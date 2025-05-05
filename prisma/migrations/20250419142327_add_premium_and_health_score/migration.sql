@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `user` ADD COLUMN `isPremium` BOOLEAN NOT NULL DEFAULT false,
+    ADD COLUMN `mentalHealthScore` INTEGER NOT NULL DEFAULT 0;

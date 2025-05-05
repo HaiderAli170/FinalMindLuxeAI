@@ -16,7 +16,7 @@ const AuthCallbackPage = async () => {
             clerkId: user.id,
         },
     });
-
+console.log(dbUser)
     if (!dbUser) {
         await db.user.create({
             data: {

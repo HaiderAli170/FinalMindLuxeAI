@@ -24,7 +24,6 @@ interface Props {
 }
 
 const ChatBox = ({ isPro, user, symptoms, medications, messages }: Props) => {
-  console.log("isPro", isPro);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 

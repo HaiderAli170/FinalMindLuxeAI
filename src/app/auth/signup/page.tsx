@@ -67,7 +67,6 @@ const SignUpPage = ({ searchParams }: { searchParams: any }) => {
     try {
       const completeSignUp = await signUp.attemptEmailAddressVerification({
         code,
-       
       });
       console.log(completeSignUp);
       if (completeSignUp.status === "complete") {
@@ -77,7 +76,9 @@ const SignUpPage = ({ searchParams }: { searchParams: any }) => {
         // Assuming missing fields are in completeSignUp.requiredFields
         const missingFields = completeSignUp.requiredFields;
         if (missingFields.length > 0) {
-          toast.error(`The following fields are missing: ${missingFields.join(", ")}`);
+          toast.error(
+            `The following fields are missing: ${missingFields.join(", ")}`
+          );
         } else {
           toast.error("Please fill in all the required fields.");
         }
@@ -91,7 +92,6 @@ const SignUpPage = ({ searchParams }: { searchParams: any }) => {
       setIsVerifying(false);
     }
   };
-  
 
   const handleSignUpError = (error: any) => {
     const errorCode = error.errors[0]?.code;
@@ -122,7 +122,7 @@ const SignUpPage = ({ searchParams }: { searchParams: any }) => {
             src="/images/brain-hi.png"
             height={100}
             width={100}
-            alt="MindWell logo"
+            alt="Mind Luxe logo"
             className="mb-1x h-10 w-fit"
           />
         </h1>
@@ -396,7 +396,7 @@ const SignUpPage = ({ searchParams }: { searchParams: any }) => {
         className={buttonVariants({
           size: "sm",
 
-          className: "absolute top-4 left-4",
+          className: "fixed top-4 left-4 cursor-pointer z-50",
         })}
       >
         <ArrowLeftIcon className="w-4 h-4 mr-1" />
@@ -425,11 +425,11 @@ const SignUpPage = ({ searchParams }: { searchParams: any }) => {
       </section>
 
       <Image
-        src="/images/loginImage.jpg"
-        height={1000}
-        width={1000}
+        src="/images/loginImage.png"
+        height={900}
+        width={900}
         alt="Brain gym illustration"
-        className="side-img max-w-[60%]"
+        className="side-img max-w-[50%]"
       />
     </div>
   );

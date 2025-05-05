@@ -6,6 +6,7 @@ CREATE TABLE `User` (
     `firstName` VARCHAR(191) NOT NULL,
     `lastName` VARCHAR(191) NOT NULL,
     `image` VARCHAR(191) NULL,
+    `isAdmin` BOOLEAN NOT NULL DEFAULT false,
     `age` INTEGER NULL,
     `height` INTEGER NULL,
     `weight` INTEGER NULL,
@@ -64,7 +65,7 @@ CREATE TABLE `MentalWellness` (
 -- CreateTable
 CREATE TABLE `Message` (
     `_id` VARCHAR(191) NOT NULL,
-    `role` ENUM('user', 'model') NOT NULL,
+    `role` ENUM('user', 'model', 'ADMIN') NOT NULL,
     `userId` VARCHAR(191) NOT NULL,
     `content` VARCHAR(191) NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),

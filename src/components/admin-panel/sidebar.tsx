@@ -28,15 +28,15 @@ export function Sidebar() {
           )}
           asChild
         >
-          <Link href="/dashboard" className="flex items-center gap-2">
+          <Link href="/dashboard" className="flex items-center justify-center  ">
             <Image
               src="/images/brain-hi.png"
-              height={20}
-              width={20}
+              height={70}
+              width={70}
               alt="Mind Luxe Ai logo"
-              className="mb-1x h-7 w-fit"
+              className=" h-12 w-fit"
             />
-            <h1
+            {/* <h1
               className={cn(
                 "font-bold text-lg whitespace-nowrap transition-[transform,opacity,display] ease-in-out duration-300",
                 sidebar?.isOpen === false
@@ -45,7 +45,7 @@ export function Sidebar() {
               )}
             >
               Mind Luxe Ai
-            </h1>
+            </h1> */}
           </Link>
         </div>
         <Menu isOpen={sidebar?.isOpen} />

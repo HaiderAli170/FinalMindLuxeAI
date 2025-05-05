@@ -35,6 +35,9 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import GradualSpacing from "@/components/magicui/gradual-spacing";
 import Image from "next/image"; // Assuming you're using Next.js for optimized images
+import CalmingVideosSlider from "@/components/dashboard/calmingVideos";
+import SleepStories from "@/components/dashboard/sleepingStrores";
+import MeditationResources from "@/components/dashboard/meditationResources";
 
 const page = () => {
   return (
@@ -103,8 +106,9 @@ const page = () => {
                 you maintain a balanced mental state. Learn more from experts in
                 the field.
               </p>
-
-              {/* more blog details  */}
+             
+            
+              export default Relax;
             </div>
 
             {/* Blog 2 */}
@@ -118,6 +122,11 @@ const page = () => {
               </p>
             </div>
           </div>
+          <div className=" flex-1 flex-col gap-5">
+                <CalmingVideosSlider />
+                <SleepStories />
+                <MeditationResources />
+              </div>
         </div>
       </div>
     </>
