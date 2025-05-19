@@ -118,14 +118,14 @@ export function getMenuList(pathname: string): Group[] {
           submenus: []
         },
         {
-          href: "/dashboard/ai",
+          href: "/dashboard/#",
           label: "AI Chat",
           active: pathname.includes("/dashboard/ai"),
           icon: BotIcon,
           submenus: []
         },
         {
-          href: "/dashboard/articles",
+          href: "/dashboard/#",
           label: "Articles",
           active: pathname.includes("/dashboard/articles"),
           icon:File ,
@@ -140,7 +140,7 @@ export function getMenuList(pathname: string): Group[] {
         },
         
         {
-          href: "/dashboard/techniques",
+          href: "/dashboard/#",
           label: "Techniques",
           active: pathname.includes("/dashboard/techniques"),
           icon: Book  ,
@@ -164,7 +164,7 @@ export function getMenuList(pathname: string): Group[] {
 
 
         {
-          href: "/dashboard/account/settings" ,
+          href: "/dashboard/#" ,
           label: "Account",
           active: pathname.includes("/account"),
           icon: Settings,
