@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 
 const ArticlesLoading = () => {
@@ -37,3 +38,17 @@ const ArticlesLoading = () => {
 };
 
 export default ArticlesLoading; 
+=======
+import { Loader } from "@/components";
+import React from "react"
+
+const Loading = () => {
+    return (
+        <div className="flex items-center justify-center h-screen z-[999]">
+            <Loader />
+        </div>
+    )
+};
+
+export default Loading
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f

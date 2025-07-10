@@ -74,9 +74,15 @@ model User {
   lastName  String
   lastLogin DateTime?
   image     String?
+<<<<<<< HEAD
   isAdmin   Boolean @default(false)
   isPremium Boolean @default(false)
   mentalHealthScore Int @default(0)
+=======
+  isAdmin   Boolean @default(false) // 0 for regular users, 1 for admin users
+  isPremium Boolean @default(false) // 0 for free users, 1 for premium users
+  mentalHealthScore Int @default(0) // Score from 0 to 100
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
 
   age           Int?
   height        Int?
@@ -147,16 +153,24 @@ model Message {
 model Billing {
   id          String   @id @default(cuid())
   userId      String
+<<<<<<< HEAD
   packageType String
   amount      Float
   receiptUrl  String
   status      String   @default("pending")
+=======
+  packageType String   // "basic", "premium", "enterprise"
+  amount      Float
+  receiptUrl  String
+  status      String   @default("pending") // "pending", "approved", "rejected"
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   user        User     @relation(fields: [userId], references: [id])
 
   @@index([userId])
 }
+<<<<<<< HEAD
 
 model MentalIllness {
   id          String   @id @default(cuid()) @map("_id")
@@ -181,10 +195,33 @@ model Blog {
   blogUrl      String   @unique @db.VarChar(500)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+=======
+model Blog {
+  id          String   @id @default(cuid()) @map("_id") // Unique identifier for each blog
+  name        String   // Name of the blog
+  url         String   @unique // Unique URL for the blog (e.g., a slug or permalink)
+  image       String   // Image associated with the blog (URL to image)
+  description String   // Description of the blog content
+
+  createdAt   DateTime @default(now()) // When the blog was created
+  updatedAt   DateTime @updatedAt      // Automatically updated when modified
+}
+// Book model
+model Book {
+  id          String   @id @default(cuid()) @map("_id")
+  title       String   // Title of the book
+  author      String   // Author of the book
+  url         String   @unique // URL link to the book or its reference
+  description String   // Description of the book
+  image       String   // Image URL for the book cover
+  createdAt   DateTime @default(now()) // When the book was added
+  updatedAt   DateTime @updatedAt      // Auto-updates when modified
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
 }
 
 model YouTubeVideo {
   id          String   @id @default(cuid()) @map("_id")
+<<<<<<< HEAD
   title       String
   url         String   @unique
   description String
@@ -201,3 +238,21 @@ model TechNews {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+=======
+  title       String   // Title of the video
+  url         String   @unique // URL to the YouTube video
+  description String   // Description of the video
+  thumbnail   String   // Thumbnail URL for the video
+  createdAt   DateTime @default(now()) // When the video was added
+  updatedAt   DateTime @updatedAt      // Auto-updates when modified
+}
+model TechNews {
+  id          String   @id @default(cuid()) @map("_id")
+  name        String   // Name of the tech news (e.g., Yoga News)
+  url         String   @unique // URL to the full article
+  gif         String   // GIF related to the tech news
+  
+  createdAt   DateTime @default(now()) // When the news was added
+  updatedAt   DateTime @updatedAt      // Auto-updates when modified
+}
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f

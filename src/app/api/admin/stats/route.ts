@@ -60,10 +60,13 @@ export async function GET() {
       },
       _count: true
     });
+<<<<<<< HEAD
     const totalBlogs = await prisma.blog.count();
     // const totalmindhelath= await prisma.mentalillness.count();
     // const total=totalBlogs+totalmindhelath;
     console.log(totalBlogs,"totalblogsssssssssssssssssss")
+=======
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
 
     // Format user growth data
     const formattedUserGrowth = userGrowth.map(day => ({
@@ -74,8 +77,11 @@ export async function GET() {
     return NextResponse.json({
       totalUsers,
       activeUsers,
+<<<<<<< HEAD
       totalBlogs,
       // total,
+=======
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
       premiumUsers,
       userGrowth: formattedUserGrowth
     });

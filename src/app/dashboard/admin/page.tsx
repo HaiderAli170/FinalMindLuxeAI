@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AdminChart } from "@/components/admin-panel/admin-chart";
+<<<<<<< HEAD
 import {
   Card,
   CardContent,
@@ -12,11 +13,14 @@ import {
 import { BookOpen, Newspaper, Users, Activity, DollarSign } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+=======
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
 
 interface UserStats {
   totalUsers: number;
   activeUsers: number;
   premiumUsers: number;
+<<<<<<< HEAD
   totalBlogs: number;
   totalHealthMaterials: number;
   userGrowth: { name: string; users: number }[];
@@ -24,6 +28,18 @@ interface UserStats {
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState<UserStats | null>(null);
+=======
+  userGrowth: { date: string; count: number }[];
+}
+
+export default function AdminDashboard() {
+  const [stats, setStats] = useState<UserStats>({
+    totalUsers: 0,
+    activeUsers: 0,
+    premiumUsers: 0,
+    userGrowth: []
+  });
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
 
   useEffect(() => {
     const fetchStats = async () => {
@@ -38,6 +54,7 @@ export default function AdminDashboard() {
     fetchStats();
   }, []);
 
+<<<<<<< HEAD
   if (!stats) {
     return (
       <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
@@ -127,6 +144,62 @@ console.log(stats,"stats")
             </div>
           </CardContent>
         </Card>
+=======
+  return (
+    <div className="flex-1 space-y-4 p-4">
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold tracking-tight">Admin Dashboard</h2>
+      </div>
+      <div className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div className="p-4">
+            <div className="text-lg font-medium">Total Users</div>
+            <div className="text-2xl font-bold">{stats.totalUsers}</div>
+          </div>
+        </div>
+   
+        <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+          <div className="p-4">
+            <div className="text-lg font-medium">Premium Users</div>
+            <div className="text-2xl font-bold">{stats.premiumUsers}</div>
+          </div>
+        </div>
+      </div>
+      <div className="grid gap-4 md:grid-cols-1">
+        <div className="col-span-1">
+          <AdminChart />
+        </div>
+        {/* <div className="col-span-1">
+          <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div className="p-4">
+              <h3 className="text-base font-medium">Recent Activity</h3>
+              <div className="mt-3 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="h-2 w-2 rounded-full bg-green-500" />
+                    <p className="text-sm">New user registered</p>
+                  </div>
+                  <p className="text-xs text-muted-foreground">2m ago</p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="h-2 w-2 rounded-full bg-blue-500" />
+                    <p className="text-sm">User upgraded to premium</p>
+                  </div>
+                  <p className="text-xs text-muted-foreground">15m ago</p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="h-2 w-2 rounded-full bg-yellow-500" />
+                    <p className="text-sm">New health tip added</p>
+                  </div>
+                  <p className="text-xs text-muted-foreground">1h ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
       </div>
     </div>
   );

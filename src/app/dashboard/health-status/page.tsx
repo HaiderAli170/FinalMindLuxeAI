@@ -40,7 +40,11 @@ const HealthStatusPage = async () => {
             <div className="px-4 py-8">
                 <div className="flex items-center gap-3 mb-8">
                     <HeartPulse className="w-8 h-8 text-primary" />
+<<<<<<< HEAD
                     <h1 className="text-2xl font-semibold text-primary">
+=======
+                    <h1 className="text-3xl font-bold text-primary">
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
                         Health Status Overview
                     </h1>
                 </div>
@@ -51,7 +55,11 @@ const HealthStatusPage = async () => {
                     <section>
                         <div className="flex items-center gap-3 mb-6">
                             <Activity className="w-6 h-6 text-rose-500" />
+<<<<<<< HEAD
                             <h2 className="text-xl font-semibold text-foreground">
+=======
+                            <h2 className="text-2xl font-semibold text-foreground">
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
                                 Your Symptoms
                             </h2>
                         </div>
@@ -101,7 +109,11 @@ const HealthStatusPage = async () => {
                     <section>
                         <div className="flex items-center gap-3 mb-6">
                             <Brain className="w-6 h-6 text-indigo-500" />
+<<<<<<< HEAD
                             <h2 className="text-xl font-semibold text-foreground">
+=======
+                            <h2 className="text-2xl font-semibold text-foreground">
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
                                 Mental Health Challenges
                             </h2>
                         </div>
@@ -161,7 +173,11 @@ const HealthStatusPage = async () => {
                 <section className="max-w-3xl mx-auto">
                     <div className="flex items-center gap-3 mb-6 justify-center">
                         <Smile className="w-6 h-6 text-emerald-500" />
+<<<<<<< HEAD
                         <h2 className="text-xl font-semibold text-foreground">
+=======
+                        <h2 className="text-2xl font-semibold text-foreground">
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
                             Mental Wellness
                         </h2>
                     </div>

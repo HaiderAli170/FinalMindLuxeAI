@@ -8,7 +8,11 @@ const CalmingVideosSlider = () => {
     const fetchVideos = async () => {
       try {
         const apiKey = 'AIzaSyApVeK3cmd63M7u-bh1MCKm-UwXRHfoQec'; 
+<<<<<<< HEAD
         const playlistId = 'PLBCxhRAIgwOPZ3OQDKg695B8Ci59UCC-N';
+=======
+        const playlistId = 'PLQ_PIlf6OzqKdBTuABBCzazB4i732pNTa';
+>>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
         const maxResults = 20;
 
         const response = await fetch(
