@@ -1,11 +1,11 @@
  
 
-# 🩺 MindWell - Your Personal AI Health Assistant
+# 🩺 MindLuxiAI - Your Personal AI Health Assistant
 
  
 ## 🌟 Introduction
 
-MindWell is a cutting-edge AI-powered health assistant designed to help you monitor and manage your mental  well-being. Built with Next.js, Clerk, Stripe, Prisma, and MongoDB, MindWell provides real-time insights and personalized recommendations to keep you on top of your health.
+MindLuxiAI is a cutting-edge AI-powered health assistant designed to help you monitor and manage your mental  well-being. Built with Next.js, Clerk, Stripe, Prisma, and MongoDB, MindWell provides real-time insights and personalized recommendations to keep you on top of your health.
 
 ## 🚀 Features
 
@@ -32,6 +32,6 @@ MindWell is a cutting-edge AI-powered health assistant designed to help you moni
 
  
 
-Built with ❤️ by [Jubair Ahmed](https://github.com/JubairShaik)
-# Project_Mindwell
-# Project_Mindwell_Hackathon
+Built with ❤️ by Naira + Bisma
+# Project_MindLuxiAI
+# Project_MindLuxiAI
