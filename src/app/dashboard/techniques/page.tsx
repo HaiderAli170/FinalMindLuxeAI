@@ -106,13 +106,7 @@ const page = () => {
                 you maintain a balanced mental state. Learn more from experts in
                 the field.
               </p>
-<<<<<<< HEAD
             
-=======
-             
-            
-              export default Relax;
->>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
             </div>
 
             {/* Blog 2 */}
@@ -127,14 +121,8 @@ const page = () => {
             </div>
           </div>
           <div className=" flex-1 flex-col gap-5">
-<<<<<<< HEAD
                 <MeditationResources />
                 <CalmingVideosSlider />
-=======
-                <CalmingVideosSlider />
-                <SleepStories />
-                <MeditationResources />
->>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
               </div>
         </div>
       </div>

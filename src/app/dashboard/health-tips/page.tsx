@@ -31,11 +31,7 @@ const HealthTipsPage = async () => {
                     <div className="p-3 rounded-full bg-primary/10">
                         <Lightbulb className="w-6 h-6 text-primary" />
                     </div>
-<<<<<<< HEAD
                     <h1 className="text-2xl font-semibold text-primary">
-=======
-                    <h1 className="text-3xl font-bold text-primary">
->>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
                         Health Tips
                     </h1>
                 </div>

@@ -114,11 +114,7 @@ export default function EditUserForm({ user, onSubmit, onCancel }: EditUserFormP
               name="weight"
               render={({ field }) => (
                 <FormItem>
-<<<<<<< HEAD
                   <FormLabel className="text-sm text-16-regular">Weight (kg)</FormLabel>
-=======
-                  <FormLabel className="text-sm">Weight (kg)</FormLabel>
->>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
                   <FormControl>
                     <Input type="number" placeholder="Enter weight" {...field} className="h-9" />
                   </FormControl>

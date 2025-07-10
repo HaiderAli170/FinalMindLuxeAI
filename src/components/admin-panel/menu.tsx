@@ -42,15 +42,6 @@ const ADMIN_MENU_ITEMS = [
     href: "/dashboard/admin/Blogs",
     icon: Users
   },
-<<<<<<< HEAD
-
-=======
-  {
-    label: "Health Materials",
-    href: "/dashboard/admin/health-Materials",
-    icon: Users
-  },
->>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
   {
     label: "Settings",
     href: "/dashboard/account/settings",
@@ -99,24 +90,7 @@ export function Menu({ isOpen }: MenuProps) {
     );
   }
 
-  useEffect(() => {
-    const checkAdminStatus = async () => {
-      if (user) {
-        try {
-          const response = await fetch('/api/check-admin');
-          const data = await response.json();
-          setIsAdmin(data.isAdmin);
-        } catch (error) {
-          console.error('Error checking admin status:', error);
-          setIsAdmin(false);
-        }
-      } else {
-        setIsAdmin(false);
-      }
-    };
 
-    checkAdminStatus();
-  }, [user]);
 
   // Show loading state while checking admin status
   if (isAdmin === null) {

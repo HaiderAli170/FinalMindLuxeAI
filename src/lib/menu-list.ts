@@ -118,14 +118,13 @@ export function getMenuList(pathname: string): Group[] {
           submenus: []
         },
         {
-          href: "/dashboard/#",
+          href: "/dashboard/ai",
           label: "AI Chat",
           active: pathname.includes("/dashboard/ai"),
           icon: BotIcon,
           submenus: []
         },
         {
-<<<<<<< HEAD
           href: "/dashboard/blogs",
           label: "Blogs",
           active: pathname.includes("/dashboard/blogs"),
@@ -134,9 +133,6 @@ export function getMenuList(pathname: string): Group[] {
         },
         {
           href: "/dashboard/articles",
-=======
-          href: "/dashboard/#",
->>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
           label: "Articles",
           active: pathname.includes("/dashboard/articles"),
           icon:File ,
@@ -151,11 +147,7 @@ export function getMenuList(pathname: string): Group[] {
         },
         
         {
-<<<<<<< HEAD
           href: "/dashboard/techniques",
-=======
-          href: "/dashboard/#",
->>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
           label: "Techniques",
           active: pathname.includes("/dashboard/techniques"),
           icon: Book  ,
@@ -179,7 +171,7 @@ export function getMenuList(pathname: string): Group[] {
 
 
         {
-          href: "/dashboard/#" ,
+          href: "/dashboard/account" ,
           label: "Account",
           active: pathname.includes("/account"),
           icon: Settings,

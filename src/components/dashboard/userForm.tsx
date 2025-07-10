@@ -164,11 +164,7 @@ export default function UserForm({ user, onSubmit, onCancel }: UserFormProps) {
             name="weight"
             render={({ field }) => (
               <FormItem>
-<<<<<<< HEAD
                 <FormLabel className="text-16-regular">Weight (kg)</FormLabel>
-=======
-                <FormLabel>Weight (kg)</FormLabel>
->>>>>>> 852510b1f934348e3d82706f00af2b31dd2f6e7f
                 <FormControl>
                   <Input placeholder="Enter weight" type="number" {...field} />
                 </FormControl>
