@@ -83,13 +83,14 @@ const StepThree = ({ nextStep }: Props) => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel htmlFor="name">
+                  <FormLabel htmlFor="name" className="text-16-regular">
                   What mental health challenges are you facing?
                   </FormLabel>
                   <Input
                     {...field}
                     id="name"
                     type="text"
+                    className="text-16-regular"
                     disabled={isPending}
                        placeholder="Anxiety, Stress, Depression, etc."
                   />
@@ -103,11 +104,12 @@ const StepThree = ({ nextStep }: Props) => {
               name="dosage"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel htmlFor="dosage"> How often do you experience these symptoms ?</FormLabel>
+                  <FormLabel htmlFor="dosage" className="text-16-regular"> How often do you experience these symptoms ?</FormLabel>
                   <Input
                     {...field}
                     id="dosage"
                     type="text"
+                    className="text-16-regular"
                     disabled={isPending}
                      placeholder="Ex: daily, weekly"
                   />
@@ -126,15 +128,16 @@ const StepThree = ({ nextStep }: Props) => {
             name="purpose"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="purpose">
+                <FormLabel htmlFor="purpose" className="text-16-regular">
                 What coping mechanisms do you use?
                 </FormLabel>
                 <Textarea
                   {...field}
                   id="purpose"
                   disabled={isPending}
+
                   placeholder="Meditation, Exercise, Therapy, etc."
-                  className="w-full max-h-20 font-bold "
+                  className="w-full max-h-20 text-16-regular "
                 />
                 <FormMessage />
               </FormItem>
@@ -145,13 +148,13 @@ const StepThree = ({ nextStep }: Props) => {
             name="frequency"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="frequency">
+                <FormLabel htmlFor="frequency" className="text-16-regular">
                 How often do you take time for self care Activities(ex: Exercise,Relaxation)
                 </FormLabel>
                 <RadioGroup
                   value={field.value}
                   onChange={field.onChange}
-                  className="grid grid-cols-2 md:grid-cols-4 gap-2"
+                  className="grid grid-cols-2 text-16-regular md:grid-cols-4 gap-2"
                 >
                   {["DAILY", "WEEKLY", "MONTHLY", "RARELY"].map((freq) => (
                     <RadioGroup.Option
@@ -184,13 +187,13 @@ const StepThree = ({ nextStep }: Props) => {
             name="adherence"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="adherence">
+                <FormLabel htmlFor="adherence" className="text-16-regular">
                 How often you get Anger Issues ?
                 </FormLabel>
                 <RadioGroup
                   value={field.value}
                   onChange={field.onChange}
-                  className="grid grid-cols-2 md:grid-cols-5 gap-2"
+                  className="grid grid-cols-2 text-16-regular md:grid-cols-5 gap-2"
                 >
                   {["ALWAYS", "OFTEN", "SOMETIMES", "NEVER", "RARELY"].map(
                     (adhere) => (

@@ -8,7 +8,15 @@ interface Props {
     children: React.ReactNode;
 }
 
-const client = new QueryClient();
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchOnWindowFocus: false,
+      staleTime: 5 * 60 * 1000, // 5 minutes
+    },
+  },
+});
 
 const Providers = ({ children }: Props) => {
     return (

@@ -34,7 +34,7 @@ const HomePage = () => {
             <div className="w-52 h-52 rounded-full bg-yellow-500 blur-[10rem] opacity-70 -z-10"></div>
             <div className="hidden lg:w-52 h-52 rounded-full bg-amber-500 blur-[10rem] opacity-70 -z-10"></div>
           </div>
-          <h1 className="text-foreground py-6 text-4xl sm:text-6xl md:text-7xl font-semibold md:font-bold !leading-snug tracking-normal text-balance w-full">
+          <h1 className="text-foreground py-6 text-4xl sm:text-6xl md:text-6xl font-semibold md:font-bold !leading-snug tracking-normal text-balance w-full">
             Your Personal <br />
             {""}
             <span className="bg-gradient-to-r from-primary to-amber-500 text-transparent bg-clip-text">
@@ -48,7 +48,7 @@ const HomePage = () => {
           </p>
           <div className="flex flex-row md:flex-row items-center justify-center gap-4 mt-8 w-full">
             <Link href="/dashboard" className={buttonVariants()}>
-              Start for free
+              Start for free here
               <ArrowRightIcon className="w-4 h-4 ml-1.5" />
             </Link>
           </div>

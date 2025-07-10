@@ -17,7 +17,7 @@ const Header = () => {
         Home
       </Link>
       <div className="flex flex-col items-center w-full h-full pt-6">
-        <h2 className="text-2xl text-32-bold font-semibold">
+        <h2 className="text-2xl font-semibold">
           Tell Me About Yourself
         </h2>
         <p className="mt-2 text-muted-foreground">

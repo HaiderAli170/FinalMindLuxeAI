@@ -6,6 +6,7 @@ const isPublicRoute = createRouteMatcher(["/", "(auth)(.*)"]);
 
 export default clerkMiddleware((auth, req) => {
     const { userId } = auth();
+    console.log(userId,"user id ")
 
     if (isPublicRoute(req)) {
         return NextResponse.next();

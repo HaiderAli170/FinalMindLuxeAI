@@ -18,7 +18,7 @@ const Navbar = ({ user }: Props) => {
           <div className="flex ">
             <Link
               href="/"
-              className="flex items-center font-semibold gap-3 text-xl"
+              className="flex items-center font-semibold gap-1 text-xl"
             >
               <Image
                 src="/images/brain-hi.png"
@@ -29,8 +29,10 @@ const Navbar = ({ user }: Props) => {
                 priority
                 className="mb-1"
               />
-              
+                   <span className="bg-gradient-to-r from-primary to-amber-500 text-transparent bg-clip-text">
+
               MIND LUXE AI
+                   </span>
             </Link>
           </div>
 
@@ -47,6 +49,19 @@ const Navbar = ({ user }: Props) => {
               </>
             ) : (
               <>
+              
+                <Link
+                  href="/about"
+                  className={buttonVariants({ size: "sm", variant: "ghost" })}
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="/privacy"
+                  className={buttonVariants({ size: "sm", variant: "ghost" })}
+                >
+                  Privacy
+                </Link>
                 <Link
                   href="/auth/signin"
                   className={buttonVariants({ size: "sm", variant: "ghost" })}

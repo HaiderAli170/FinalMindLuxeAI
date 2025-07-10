@@ -1,9 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
+// This is your updated Prisma schema file
 generator client {
   provider = "prisma-client-js"
 }
@@ -77,9 +72,12 @@ model User {
   email     String  @unique
   firstName String
   lastName  String
+  lastLogin DateTime?
   image     String?
+  isAdmin   Boolean @default(false)
+  isPremium Boolean @default(false)
+  mentalHealthScore Int @default(0)
 
-  // profession    String?
   age           Int?
   height        Int?
   weight        Int?
@@ -97,35 +95,33 @@ model User {
   medications    Medication[]
   mentalwellness MentalWellness[]
   messages       Message[]
+  billings       Billing[]
 }
 
-// step 2
 model Symptom {
   id        String      @id @default(cuid()) @map("_id")
   userId    String
-  name      SymptomName // here i want if if the user selects other then the predefined symptoms then he can enter his own symptom
-  intensity Int // Intensity level from 1 to 10
-  frequency Frequency //how often the symptom occurs
-  loggedAt  DateTime?   @default(now()) // When the symptom was logged
+  name      SymptomName
+  intensity Int
+  frequency Frequency
+  loggedAt  DateTime?   @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-// step 3
 model Medication {
   id        String    @id @default(cuid()) @map("_id")
   userId    String
-  name      String // Name of the medication
-  dosage    String // Dosage of the medication
-  purpose   String? // Purpose of the medication
-  frequency Frequency // Frequency of the medication
-  adherence Adherence // Whether the user is adhering to the medication
-  startDate DateTime? // When the medication was started
+  name      String
+  dosage    String
+  purpose   String?
+  frequency Frequency
+  adherence Adherence
+  startDate DateTime?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-// step 4
 model MentalWellness {
   id        String  @id @default(cuid()) @map("_id")
   userId    String
@@ -138,7 +134,6 @@ model MentalWellness {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-// chat
 model Message {
   id        String   @id @default(cuid()) @map("_id")
   role      Role
@@ -147,4 +142,62 @@ model Message {
   createdAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Billing {
+  id          String   @id @default(cuid())
+  userId      String
+  packageType String
+  amount      Float
+  receiptUrl  String
+  status      String   @default("pending")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model MentalIllness {
+  id          String   @id @default(cuid()) @map("_id")
+  title       String   // Title of the mental illness
+  description String   // Description of the mental illness
+  image       String   @db.VarChar(500)
+  link        String   @unique // URL to external resource
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Blog {
+  id           String   @id @default(cuid()) @map("_id")
+  title        String
+  author       String?
+  publishedDate String?
+  readTime     String?
+  description  String
+  content      String?  @db.VarChar(500)
+  imageUrl     String   @db.VarChar(500)
+  category     String?
+  blogUrl      String   @unique @db.VarChar(500)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model YouTubeVideo {
+  id          String   @id @default(cuid()) @map("_id")
+  title       String
+  url         String   @unique
+  description String
+  thumbnail   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TechNews {
+  id          String   @id @default(cuid()) @map("_id")
+  name        String
+  url         String   @unique
+  gif         String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

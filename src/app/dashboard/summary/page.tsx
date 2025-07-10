@@ -33,14 +33,14 @@ const SummaryPage = async () => {
     return (
         <div className="flex flex-col items-start w-full">
             <div className="w-full p-2 md:p-4">
-                <h1 className="text-2xl font-semibold">
+                <h1 className="text-2xl font-semibold text-primary">
                     Health Summary
                 </h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8">
                     <Card>
                         <CardHeader>
-                            <CardTitle className="text-xl">
+                            <CardTitle className="text-lg">
                                 Personal Information
                             </CardTitle>
                         </CardHeader>
@@ -59,7 +59,7 @@ const SummaryPage = async () => {
 
                     <Card>
                         <CardHeader>
-                            <CardTitle className="text-xl">
+                            <CardTitle className="text-lg">
                                 Physical Information
                             </CardTitle>
                         </CardHeader>
@@ -75,7 +75,7 @@ const SummaryPage = async () => {
 
                     <Card>
                         <CardHeader>
-                            <CardTitle className="text-xl">
+                            <CardTitle className="text-lg">
                                 Symptoms
                             </CardTitle>
                         </CardHeader>
@@ -96,7 +96,7 @@ const SummaryPage = async () => {
 
                     <Card>
                         <CardHeader>
-                            <CardTitle className="text-xl">
+                            <CardTitle className="text-lg">
                                 Mental Challanges ! 
                             </CardTitle>
                         </CardHeader>
@@ -117,7 +117,7 @@ const SummaryPage = async () => {
 
                     <Card>
                         <CardHeader>
-                            <CardTitle className="text-xl">
+                            <CardTitle className="text-lg">
                                 Current Improvement Activities 
                             </CardTitle>
                         </CardHeader>

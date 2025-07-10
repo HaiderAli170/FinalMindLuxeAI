@@ -20,7 +20,7 @@ const DashboardPage = async () => {
 
   const dbUser = await db.user.findUnique({
     where: {
-      id: user?.id,
+      clerkId: user?.id,
     },
     include: {
       symptoms: true,
@@ -44,18 +44,18 @@ const DashboardPage = async () => {
   return (
     <div className="grid grid-cols-1 h-screen md:grid-cols-2 xl:grid-cols-12 w-full gap-6 lg:p-8">
       <div className="flex flex-col md:col-span-1 xl:col-span-8 gap-8 w-full">
-        <div>
+        {/* <div>
           TODO
           <h2> to add a Mood tacker Daily to Track EveryDay ! !</h2>
-        </div>
+        </div> */}
         <div>
-        <Image
+        {/* <Image
             src="/files/streak.png"
             height={1200}
             width={1000}
             alt="MindWell logo"
             className="rounded-xl"
-          />
+          /> */}
         </div>
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 w-full">
           <MagicCard
@@ -113,8 +113,8 @@ const DashboardPage = async () => {
               className="flex items-center justify-between w-full bg-background group p-4"
             >
               <div className="space-y-0.5">
-                <h5 className="font-medium   text-[1.2rem] mb-2 font-heading text-indigo-500">
-                  Health tips
+                <h5 className="font-normal   text-[1.2rem] mb-2 font-heading text-indigo-500">
+                  Health tips h
                 </h5>
                 <p className="md:text-[13px] text-xs dark:text-slate-500 text-neutral-600">
                   Get health tips and advice
@@ -147,25 +147,7 @@ const DashboardPage = async () => {
             </Link>
           </MagicCard>
 
-          <MagicCard
-            color="rgba(99,102,241,.08)"
-            className="border-2 border-indigo-100 max-w-full w-full"
-          >
-            <Link
-              href="/dashboard/music"
-              className="flex items-center justify-between w-full bg-background group p-4"
-            >
-              <div className="space-y-0.5">
-                <h5 className="font-medium text-[1.2rem] mb-2 text-indigo-500">
-                  Music for Wellness
-                </h5>
-                <p className=" text-xs md:text-[13px] dark:text-slate-500 text-neutral-600">
-                  Explore Music that makes you calm
-                </p>
-              </div>
-              <Music className="w-8 h-8 text-indigo-500 group-hover:scale-105 transition transform" />
-            </Link>
-          </MagicCard>
+        
           <MagicCard
             color="rgba(99,102,241,.08)"
             className="border-2 border-indigo-100 max-w-full w-full"
@@ -189,7 +171,7 @@ const DashboardPage = async () => {
           
         </div>
 
-        <div className="flex flex-col items-start w-full">
+        <div className="flex flex-col max-w-7xl items-start w-full">
           <h3 className="text-xl font-semibold">Health Recommendations</h3>
           <div className=" w-full mt-7">
             <Recommendations

@@ -18,7 +18,7 @@ const DashboardLayout = async ({ children }: Props) => {
 
   const dbUser = await db.user.findUnique({
     where: {
-      id: user?.id,
+      clerkId: user?.id,
     },
     include: {
       symptoms: true,
@@ -26,6 +26,7 @@ const DashboardLayout = async ({ children }: Props) => {
       mentalwellness: true,
     },
   });
+  console.log(dbUser,"jjjjjj")
 
   if (!dbUser) {
     redirect("/onboarding?step=1");

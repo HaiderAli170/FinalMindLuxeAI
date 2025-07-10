@@ -24,7 +24,7 @@ const Footer = () => {
                 <p className="text-muted-foreground text-sm mb-4 text-center md:text-left">
                   Sign up to our newsletter to get the latest news and updates.
                 </p>
-                <form className="flex">
+                {/* <form className="flex">
                   <Input
                     required
                     type="email"
@@ -37,7 +37,7 @@ const Footer = () => {
                   >
                     Get notified
                   </Button>
-                </form>
+                </form> */}
               </div>
             </div>
             <div className="md:text-left mt-8 gap-20">
@@ -53,9 +53,7 @@ const Footer = () => {
             <p className="text-start text-muted-foreground text-sm">
               All rights reserved @{new Date().getFullYear()}  MIND LUXE AI
             </p>
-            <Button size="sm" variant="outline">
-              Feedback
-            </Button>
+           
           </div>
         </AnimationContainer>
       </MaxWidthWrapper>

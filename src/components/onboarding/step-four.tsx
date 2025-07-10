@@ -83,31 +83,40 @@ const StepFour = ({ nextStep }: Props) => {
             name="happiness"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="happiness">
+                <FormLabel htmlFor="happiness" className="text-16-regular">
                   How happy are you today?
                 </FormLabel>
                 <RadioGroup
                   value={field.value?.toString()}
                   onChange={(value) => field.onChange(Number(value))}
-                  className="grid grid-cols-5 md:grid-cols-10 gap-2"
+                  className="grid grid-cols-2 text-xs font-semibold md:grid-cols-4   gap-2"
                 >
-                  {[...Array(10)].map((_, index) => (
+                  {[
+                    { value: "1", label: "Unhappy" },
+                    { value: "2", label: "Slightly Down" },
+                    { value: "3", label: "Neutral" },
+                    { value: "4", label: "Content" },
+                    { value: "5", label: "Pleased" },
+                    { value: "6", label: "Happy" },
+                    { value: "7", label: "Joyful" },
+                    { value: "8", label: "Ecstatic" }
+                  ].map((option) => (
                     <RadioGroup.Option
-                      key={index + 1}
-                      id={`happiness-${index + 1}`}
-                      value={(index + 1).toString()}
+                      key={option.value}
+                      id={`happiness-${option.value}`}
+                      value={option.value}
                       className={({ active, checked }) =>
                         cn(
-                          "border-2  rounded-lg w-full  text-center   border-border outline-none disabled:opacity-50 transition transform duration-200 ease-in-out active:scale-95 h-full border-b-4 hover:bg-black/5 cursor-pointer active:border-amber-500 active:border-b-2 flex flex-col items-center justify-between p-3 focus:outline-none ring-0 focus:ring-0  md:font-semibold font-medium",
+                          "border-2 rounded-lg w-full py-2 text-center border-border outline-none disabled:opacity-50 transition transform duration-200 ease-in-out active:scale-95 h-full border-b-4 hover:bg-black/5 cursor-pointer active:border-amber-500 active:border-b-2 flex flex-col items-center justify-between p-3 focus:outline-none ring-0 focus:ring-0 md:font-semibold font-medium",
                           (active || checked) && "border-primary"
                         )
                       }
                     >
                       <RadioGroup.Label
-                        htmlFor={`happiness-${index + 1}`}
-                        className="cursor-pointer"
+                        htmlFor={`happiness-${option.value}`}
+                        className="cursor-pointer text-sm"
                       >
-                        {index + 1}
+                        {option.label}
                       </RadioGroup.Label>
                     </RadioGroup.Option>
                   ))}
@@ -121,11 +130,11 @@ const StepFour = ({ nextStep }: Props) => {
             name="mood"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="mood">How do you feel today?</FormLabel>
+                <FormLabel htmlFor="mood" className="text-16-regular">How do you feel today?</FormLabel>
                 <RadioGroup
                   value={field.value}
                   onChange={field.onChange}
-                  className="grid grid-cols-2 md:grid-cols-6 gap-2"
+                  className="grid grid-cols-2 text-16-regular md:grid-cols-6 gap-2"
                 >
                   {[
                     "HAPPY",
@@ -172,13 +181,13 @@ const StepFour = ({ nextStep }: Props) => {
             name="stress"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="stress">
+                <FormLabel htmlFor="stress" className="text-16-regular">
                   How stressed are you today?
                 </FormLabel>
                 <RadioGroup
                   value={field.value}
                   onChange={field.onChange}
-                  className="grid grid-cols-2 md:grid-cols-5 gap-2"
+                  className="grid grid-cols-2 text-16-regular md:grid-cols-5 gap-2"
                 >
                   {[
                     "NOT_STRESSED",
@@ -217,13 +226,13 @@ const StepFour = ({ nextStep }: Props) => {
             name="sleep"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="sleep">
+                <FormLabel htmlFor="sleep" className="text-16-regular">
                   How would you rate your sleep quality?
                 </FormLabel>
                 <RadioGroup
                   value={field.value}
                   onChange={field.onChange}
-                  className="grid grid-cols-2 md:grid-cols-3 gap-2"
+                  className="grid grid-cols-2 text-16-regular md:grid-cols-3 gap-2"
                 >
                   {["GOOD", "BAD", "AVERAGE"].map((freq) => (
                     <RadioGroup.Option

@@ -1,11 +1,7 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-export const inter = Inter({
+export const poppins = Poppins({
     subsets: ["latin"],
-    variable: "--font-inter",
-});
-
-export const dmSans = Plus_Jakarta_Sans({
-    subsets: ["latin"],
-    variable: "--font-dmsans",
+    weight: ["300", "400", "500", "600", "700"],
+    variable: "--font-poppins",
 });

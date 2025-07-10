@@ -107,7 +107,7 @@ const UserDetailsModal = () => {
                   name="gender"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <FormLabel>Specify your gender</FormLabel>
+                      <FormLabel className="text-16-regular">Specify your gender</FormLabel>
                       <RadioGroup
                         value={field.value}
                         onChange={field.onChange}
@@ -146,7 +146,7 @@ const UserDetailsModal = () => {
                     name="weight"
                     render={({ field }) => (
                       <FormItem className="w-full">
-                        <FormLabel>Weight (kg)</FormLabel>
+                        <FormLabel className="text-16-regular">Weight (kg)</FormLabel>
                         <Input
                           {...field}
                           disabled={isPending}
@@ -279,7 +279,7 @@ const UserDetailsModal = () => {
                 name="gender"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel>Specify your gender</FormLabel>
+                    <FormLabel className="text-16-regular">Specify your gender</FormLabel>
                     <RadioGroup
                       value={field.value}
                       onChange={field.onChange}
@@ -327,7 +327,7 @@ const UserDetailsModal = () => {
                   name="weight"
                   render={({ field }) => (
                     <FormItem className="w-full">
-                      <FormLabel>Weight (kg)</FormLabel>
+                      <FormLabel className="text-16-regular">Weight (kg)</FormLabel>
                       <Input
                         {...field}
                         disabled={isPending}

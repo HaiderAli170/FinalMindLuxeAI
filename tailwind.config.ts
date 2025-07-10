@@ -84,9 +84,16 @@ const config = {
         },
       },
       fontFamily: {
-        "heading": ["var(--font-dmsans)"],
-        "default" : ["var(--font-inter)"],
-        "heading2":["var(--font-sora)"]
+        "poppins": ["var(--font-poppins)", "sans-serif"],
+        "heading": ["var(--font-poppins)", "sans-serif"],
+        "default": ["var(--font-poppins)", "sans-serif"],
+        "heading2":["var(--font-sora)"],
+      },
+      fontWeight: {
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
       },
       borderRadius: {
         lg: "var(--radius)",

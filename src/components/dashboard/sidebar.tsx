@@ -59,13 +59,13 @@ const Sidebar = ({ show = true, setIsOpen }: Props) => {
                         className="flex items-start sm:items-center sm:justify-center gap-x-2 w-full h-full"
                       >
                         <link.icon strokeWidth={1.7} className="w-5 h-5" />
-                        <span className="text-sm sm:hidden">{link.label} h</span>
+                        <span className="text-sm sm:hidden">{link.label} </span>
                       </Link>
                       <TooltipContent
                         side="right"
                         className="text-xs hidden sm:flex"
                       >
-                        {link.label} h
+                        {link.label} 
                       </TooltipContent>
                     </li>
                   </TooltipTrigger>

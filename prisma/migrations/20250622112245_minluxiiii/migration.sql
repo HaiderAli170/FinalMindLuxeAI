@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE `blog` MODIFY `blogUrl` VARCHAR(500) NOT NULL,
+    MODIFY `content` VARCHAR(500) NULL,
+    MODIFY `imageUrl` VARCHAR(500) NOT NULL;

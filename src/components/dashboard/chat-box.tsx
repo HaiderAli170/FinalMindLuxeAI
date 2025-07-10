@@ -24,7 +24,6 @@ interface Props {
 }
 
 const ChatBox = ({ isPro, user, symptoms, medications, messages }: Props) => {
-  console.log("isPro", isPro);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -245,7 +244,7 @@ const ChatBox = ({ isPro, user, symptoms, medications, messages }: Props) => {
               disabled={isLoading}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask about your mental health..."
-              className="flex-1 min-w-0 focus-visible:ring-0 focus-visible:ring-transparent border"
+              className="flex-1 text-sm font-normal min-w-0 focus-visible:ring-0 focus-visible:ring-transparent border"
             />
             <div className="flex items-center justify-center w-10">
               <Button

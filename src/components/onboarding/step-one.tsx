@@ -1,4 +1,3 @@
-
 // @ts-nocheck
 
 
@@ -9,6 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -42,9 +42,33 @@ interface Props {
 }
 
 const StepOne = ({ nextStep }: Props) => {
+  const [heightUnit, setHeightUnit] = useState<'cm' | 'in'>('cm');
   const form = useForm<StepOneSchemaType>({
     resolver: zodResolver(StepOneSchema),
   });
+
+  // Function to convert inches to centimeters
+  const inchesToCm = (inches: number) => {
+    return Math.round(inches * 2.54);
+  };
+
+  // Function to convert centimeters to inches
+  const cmToInches = (cm: number) => {
+    return Math.round(cm / 2.54 * 10) / 10;
+  };
+
+  // Handle height unit change
+  const handleHeightUnitChange = (newUnit: 'cm' | 'in') => {
+    const currentHeight = form.getValues('height');
+    if (currentHeight) {
+      if (newUnit === 'cm' && heightUnit === 'in') {
+        form.setValue('height', inchesToCm(Number(currentHeight)).toString());
+      } else if (newUnit === 'in' && heightUnit === 'cm') {
+        form.setValue('height', cmToInches(Number(currentHeight)).toString());
+      }
+    }
+    setHeightUnit(newUnit);
+  };
 
   const { mutate, isPending } = useMutation({
     mutationKey: ["step-one"],
@@ -173,7 +197,7 @@ const StepOne = ({ nextStep }: Props) => {
               name="weight"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel>Weight (kg)</FormLabel>
+                  <FormLabel className="text-16-regular">Weight (kg)</FormLabel>
                   <Input
                     {...field}
                     disabled={isPending}
@@ -189,13 +213,31 @@ const StepOne = ({ nextStep }: Props) => {
               name="height"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel>Height (cm)</FormLabel>
-                  <Input
-                    {...field}
-                    disabled={isPending}
-                    placeholder="170"
-                    type="number"
-                  />
+                  <FormLabel className="text-16-regular">Height</FormLabel>
+                  <div className="flex gap-2">
+                    <Input
+                      {...field}
+                      disabled={isPending}
+                      placeholder={heightUnit === 'cm' ? "170" : "67"}
+                      type="number"
+                      className="flex-1"
+                    />
+                    <Select
+                      value={heightUnit}
+                      onValueChange={(value: 'cm' | 'in') => handleHeightUnitChange(value)}
+                    >
+                      <SelectTrigger className="w-[80px]">
+                        <SelectValue placeholder="Unit" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="cm">cm</SelectItem>
+                        <SelectItem value="in">in</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {heightUnit === 'cm' ? 'Centimeters' : 'Inches'}
+                  </p>
                   <FormMessage />
                 </FormItem>
               )}
@@ -207,7 +249,7 @@ const StepOne = ({ nextStep }: Props) => {
               name="age"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel>What is your age?</FormLabel>
+                  <FormLabel className="text-16-regular">What is your age?</FormLabel>
                   <Input
                     {...field}
                     type="number"
@@ -223,7 +265,7 @@ const StepOne = ({ nextStep }: Props) => {
               name="bloodGroup"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel>Your blood group</FormLabel>
+                  <FormLabel className="text-16-regular">Your blood group</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}

@@ -60,7 +60,7 @@ const Symptoms = async () => {
                     </span>
                     <div className="flex items-center gap-8">
                         {symptoms?.map((symptom) => (
-                            <p key={symptom.id} className="text-sm rounded-sm  py-2 px-4 border border-slate-200  font-semibold rounded-sm md:rounded-md capitalize">
+                            <p key={symptom.id} className="text-sm   py-2 px-4 border border-slate-200  font-semibold rounded-sm md:rounded-md capitalize">
                                {symptom.name} : {symptom.intensity}/10 
                             </p>
                         ))}
