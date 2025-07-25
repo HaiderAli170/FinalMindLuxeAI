@@ -431,7 +431,7 @@ const ArticlesPage = () => {
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
-            Mental Health Blogs
+            Mental Health Articles
           </button>
         </div>
 

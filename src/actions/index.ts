@@ -23,6 +23,7 @@ import { createBook , updateBook,
     updateYouTubeVideo,
     deleteYouTubeVideo,
     getYouTubeVideos,} from "./BooksYogsVideo";
+import { createReview, getReviews } from './reviews';
 
 export {
   updateUser,
@@ -36,6 +37,8 @@ export {
   updateBlog,
   deleteBlog,
   createBook,
+  getReviews,
+  createReview,
   updateBook,
   deleteBook,
   getBooks,

@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client"
 import { AnimationContainer, Icons, MaxWidthWrapper } from "@/components";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { FEATURES, PLANS } from "@/constants";
@@ -11,9 +12,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib";
-import { ArrowRightIcon, CheckIcon } from "lucide-react";
+import { ArrowRightIcon, CheckIcon, Star } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Tooltip,
   TooltipContent,
@@ -21,10 +22,65 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Image from "next/image";
+import { getReviews,createReview } from "@/actions";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   const baseDelay = 0.2;
+  // Form state for review submission
+  const [formData, setFormData] = useState({
+    name: "",
+    stars: 0,
+    description: "",
+  });
+  const [submitting, setSubmitting] = useState(false);
 
+  // Handle form input changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: name === "stars" ? Number(value) : value,
+    }));
+  };
+
+  // API: createReview
+
+
+  // Handle form submit
+  const handleReviewSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formData.name || !formData.description || !formData.stars) {
+      alert("Please fill all fields and select a star rating.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      const newReview = await createReview(formData);
+      setReviews((prev) => [newReview, ...prev]);
+      setFormData({ name: "", stars: 0, description: "" });
+    } catch (err: any) {
+      alert(err.message || "Failed to submit review");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const [reviews, setReviews] = useState<any[]>([]);
+
+  
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const reviews = await getReviews();
+      setReviews(reviews);
+    };
+    fetchReviews();
+  }, []);
+  useEffect(() => {
+    
+  }, [reviews]);
   return (
     <>
       {/* hero */}
@@ -181,6 +237,164 @@ const HomePage = () => {
           ))}
         </div>
       </MaxWidthWrapper>
+      {/* Reviews Section */}
+      <MaxWidthWrapper className="py-16">
+        <div className="max-w-8xl mx-auto rounded-2xl w-full  p-9 ">
+          <h2 className="text-2xl font-bold mb-6 p-5 text-center">Testimonials</h2>
+          {/* Animated Reviews Carousel */}
+          <div className="relative rounded-2xl">
+            {/* Fade overlays */}
+            <div className="pointer-events-none absolute left-0 top-0 h-full w-16 z-10 bg-gradient-to-r from-gray-100  to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 h-full  w-16 z-10 bg-gradient-to-l from-gray-100  to-transparent" />
+            <div className="overflow-x-hidden w-full mb-3">
+              <motion.div
+                className="flex flex-row gap-4"
+                style={{ width: reviews.length > 0 ? `${reviews.length * 300}px` : "100%" }}
+                animate={{
+                  x: [0, -(reviews.length * 260)],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: reviews.length * 2.5,
+                  ease: "linear",
+                }}
+              >
+                {reviews && reviews.length > 0 ? (
+                  [...reviews, ...reviews]?.map((review, idx) => (
+                    <motion.div
+                      key={idx}
+                      className="inline-block min-w-[260px] max-w-xs border rounded-xl p-7 bg-white/90 shadow-lg backdrop-blur-md hover:scale-105 transition-transform duration-300"
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="font-medium text-foreground truncate max-w-[120px]">{review.name || review.email}</span>
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className={`w-4 h-4 ${i < review.stars ? "text-yellow-400" : "text-gray-300"}`} fill={i < review.stars ? "#facc15" : "none"} />
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground text-sm mt-2">{review.description}</p>
+                    </motion.div>
+                  ))
+                ) : (
+                  <p className="text-muted-foreground text-center">No reviews yet. Be the first to add one!</p>
+                )}
+              </motion.div>
+            </div>
+          </div>
+          {/* Add Review Button and Modal */}
+          <div className="flex justify-center mt-8">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="default">Add Review</Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md w-full">
+                <DialogHeader>
+                  <DialogTitle>Add Your Review</DialogTitle>
+                </DialogHeader>
+                <form
+                  className="space-y-4"
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    const form = e.target as HTMLFormElement;
+                    const name = (form.name as any).value.trim();
+                    const description = (form.description as HTMLTextAreaElement).value.trim();
+                    if (!name || !description || !formData.stars) {
+                      alert("Please fill all fields and select a star rating.");
+                      return;
+                    }
+                    try {
+                      const newReview = await createReview({ name, stars: formData.stars, description });
+                      setReviews((prev) => [newReview, ...prev]);
+                      setFormData({ name: "", stars: 0, description: "" });
+                      (form.querySelector("button[type='button']") as HTMLElement)?.click(); // close modal
+                    } catch (err: any) {
+                      alert(err.message || "Failed to submit review");
+                    }
+                  }}
+                >
+                  <div>
+                    <label className="block text-sm font-medium mb-1" htmlFor="name">
+                      Name
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      className="w-full border rounded px-3 py-2 text-sm"
+                      placeholder="Your name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1" htmlFor="description">
+                      Description
+                    </label>
+                    <textarea
+                      id="description"
+                      name="description"
+                      required
+                      className="w-full border rounded px-3 py-2 text-sm"
+                      rows={3}
+                      placeholder="Share your experience..."
+                      value={formData.description}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-1">Star Rating</label>
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button
+                          type="button"
+                          key={star}
+                          className="focus:outline-none"
+                          onClick={() => setFormData((prev) => ({ ...prev, stars: star }))}
+                        >
+                          <Star
+                            className={`w-6 h-6 transition-colors ${formData.stars >= star ? "text-yellow-400" : "text-gray-300"}`}
+                            fill={formData.stars >= star ? "#facc15" : "none"}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex justify-end">
+                    <Button type="submit" className="w-full" disabled={submitting}>
+                      {submitting ? "Submitting..." : "Submit Review"}
+                    </Button>
+                  </div>
+                </form>
+                <DialogClose asChild>
+                  <button type="button" className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                    <span className="sr-only">Close</span>
+                    ×
+                  </button>
+                </DialogClose>
+              </DialogContent>
+            </Dialog>
+          </div>
+        </div>
+      </MaxWidthWrapper>
+
+      {/* Reviews State Management */}
+      {/*
+        Place this at the top of your component (outside the return statement):
+
+        const [reviews, setReviews] = React.useState(() => {
+          if (typeof window !== "undefined") {
+            const stored = window.localStorage.getItem("reviews");
+            return stored ? JSON.parse(stored) : [];
+          }
+          return [];
+        });
+      */}
 
       {/* cta */}
       <MaxWidthWrapper className="py-20">

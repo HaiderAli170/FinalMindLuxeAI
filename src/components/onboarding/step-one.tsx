@@ -221,10 +221,11 @@ const StepOne = ({ nextStep }: Props) => {
                       placeholder={heightUnit === 'cm' ? "170" : "67"}
                       type="number"
                       className="flex-1"
+                      // Remove any validation or conversion logic here, just let user type any number
                     />
                     <Select
                       value={heightUnit}
-                      onValueChange={(value: 'cm' | 'in') => handleHeightUnitChange(value)}
+                      onValueChange={(value: 'cm' | 'in') => setHeightUnit(value)}
                     >
                       <SelectTrigger className="w-[80px]">
                         <SelectValue placeholder="Unit" />

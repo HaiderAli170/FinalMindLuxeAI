@@ -63,6 +63,12 @@ const Navbar = ({ user }: Props) => {
                   Privacy
                 </Link>
                 <Link
+                  href="/helplines"
+                  className={buttonVariants({ size: "sm", variant: "ghost" })}
+                >
+                  Helpline
+                </Link>
+                <Link
                   href="/auth/signin"
                   className={buttonVariants({ size: "sm", variant: "ghost" })}
                 >

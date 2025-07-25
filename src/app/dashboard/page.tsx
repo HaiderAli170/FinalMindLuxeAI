@@ -161,7 +161,7 @@ const DashboardPage = async () => {
                   Word of Advice !
                 </h5>
                 <p className="md:text-[13px]  text-xs dark:text-slate-500 text-neutral-600">
-                  Trust me frnd ! 
+                  Trust me friend ! 
                 </p>
               </div>
               <NotepadTextIcon  className="w-8 h-8 text-indigo-500 group-hover:scale-105 transition transform" />

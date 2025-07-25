@@ -214,7 +214,7 @@ const ChatBox = ({ isPro, user, symptoms, medications, messages }: Props) => {
             <div className="flex flex-col justify-center items-center text-center p-4">
               <LoaderIcon className="w-5 h-5 animate-spin" />
               <p className="text-sm text-muted-foreground font-medium">
-                Assistant Bro is thinking...
+              Bira care is thinking...
               </p>
             </div>
           )}

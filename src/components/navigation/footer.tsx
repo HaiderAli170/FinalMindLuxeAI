@@ -7,6 +7,8 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import Image from "next/image";
 import {  STEPS } from "@/constants";
+import { Phone, ShareIcon, User } from "lucide-react";
+import { InfoCircledIcon } from "@radix-ui/react-icons";
 const Footer = () => {
   return (
     <footer className="w-full relative bottom-0 border-t border-border pt-20 pb-8">
@@ -19,25 +21,29 @@ const Footer = () => {
               </div>
               <div className="flex flex-col items-start mt-5">
                 <h2 className="text-lg font-semibold font-heading mb-2">
-                  Join our newsletter
+                  Quick Health Navigation
                 </h2>
                 <p className="text-muted-foreground text-sm mb-4 text-center md:text-left">
-                  Sign up to our newsletter to get the latest news and updates.
+                  Explore important health resources and tools right from the footer.
                 </p>
-                {/* <form className="flex">
-                  <Input
-                    required
-                    type="email"
-                    placeholder="Enter your email"
-                    className="rounded-l-lg rounded-r-none border focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 h-9"
-                  />
-                  <Button
-                    type="submit"
-                    className="rounded-r-lg rounded-l-none hover:shadow-none hover:translate-y-0"
-                  >
-                    Get notified
-                  </Button>
-                </form> */}
+                <nav className="flex flex-col gap-2">
+                  <Link href="/helplines" className="text-blue-600 hover:underline text-sm flex items-center gap-1">
+                    <Phone className="w-4 h-4" />
+                    Mental Health Helplines
+                  </Link>
+                  <Link href="/about" className="text-blue-600 hover:underline text-sm flex items-center gap-1">
+                    <InfoCircledIcon className="w-4 h-4" />
+                    About Mind Luxe AI
+                  </Link>
+                  <Link href="/privacy" className="text-blue-600 hover:underline text-sm flex items-center gap-1">
+                    <ShareIcon className="w-4 h-4" />
+                    Privacy Policy
+                  </Link>
+                  <Link href="/" className="text-blue-600 hover:underline text-sm flex items-center gap-1">
+                    <User className="w-4 h-4" />
+                    Home
+                  </Link>
+                </nav>
               </div>
             </div>
             <div className="md:text-left mt-8 gap-20">
