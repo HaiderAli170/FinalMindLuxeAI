@@ -11,6 +11,7 @@ interface Props {
 }
 
 const createMessages = async ({ role, message }: Props) => {
+    console.log(message,role,"hhhhhhhhhhhhhhhhhhhhhhhhhhh")
 
     const user = await currentUser();
 
@@ -23,6 +24,8 @@ const createMessages = async ({ role, message }: Props) => {
             data: {
                 role,
                 content: message,
+                
+
                 userId: user.id
             },
         });

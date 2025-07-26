@@ -8,7 +8,7 @@ const helplines = [
     description:
       "Umang provides free, confidential support for people experiencing emotional distress, suicidal thoughts, or mental health challenges. Available 24/7.",
     phone: "0311-7786264",
-    website: "https://umangpakistan.org/",
+    website: "https://www.umang.com.pk/",
     topics: ["Suicidal Thoughts", "Depression", "Anxiety", "Emotional Support"],
     languages: ["Urdu", "English"],
   },
@@ -17,7 +17,7 @@ const helplines = [
     description:
       "Rozan offers counseling and support for mental health, emotional well-being, and crisis situations. Reach out for a listening ear.",
     phone: "0304-1111741",
-    website: "https://rozan.org/helpline/",
+    website: "https://rozan.org/contact-us/",
     topics: ["Mental Health", "Stress", "Family Issues", "Crisis Support"],
     languages: ["Urdu", "English"],
   },
@@ -26,7 +26,7 @@ const helplines = [
     description:
       "Taskeen provides mental health support, guidance, and resources for individuals facing psychological distress.",
     phone: "0332-5267936",
-    website: "https://taskeen.org/helpline/",
+    website: "https://taskeen.org/seek-help/",
     topics: ["Mental Health", "Suicidal Thoughts", "Counseling"],
     languages: ["Urdu", "English"],
   },
@@ -35,7 +35,7 @@ const helplines = [
     description:
       "Befrienders offers emotional support to anyone in distress, struggling to cope, or at risk of suicide.",
     phone: "021-3497 0000",
-    website: "https://www.befrienderskarachi.org/",
+    website: "https://befrienders.org/",
     topics: ["Suicidal Thoughts", "Loneliness", "Emotional Support"],
     languages: ["Urdu", "English"],
   },

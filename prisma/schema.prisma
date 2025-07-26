@@ -138,7 +138,8 @@ model Message {
   id        String   @id @default(cuid()) @map("_id")
   role      Role
   userId    String
-  content   String
+  content   String   @db.VarChar(5000) // allow long messages to be stored
+  answer    String? // Added answer variable
   createdAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)

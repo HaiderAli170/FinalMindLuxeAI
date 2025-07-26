@@ -6,6 +6,7 @@ import { currentUser } from "@clerk/nextjs/server";
 const AIPage = async () => {
 
     const messages = await getMessags();
+    console.log(messages,'messages')
 
     const user = await currentUser();
 
