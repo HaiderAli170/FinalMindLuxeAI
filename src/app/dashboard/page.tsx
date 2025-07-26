@@ -114,7 +114,7 @@ const DashboardPage = async () => {
             >
               <div className="space-y-0.5">
                 <h5 className="font-normal   text-[1.2rem] mb-2 font-heading text-indigo-500">
-                  Health tips h
+                  Health tips
                 </h5>
                 <p className="md:text-[13px] text-xs dark:text-slate-500 text-neutral-600">
                   Get health tips and advice
