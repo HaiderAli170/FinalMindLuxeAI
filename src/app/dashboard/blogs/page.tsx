@@ -9,7 +9,7 @@ const MentalHealthPage = () => {
   const [activeTab, setActiveTab] = useState("conditions");
   const [searchTerm, setSearchTerm] = useState("");
   const [blogs, setBlogs]:any = useState([]);
-  const [mentalIllnesses, setMentalIllnesses] = useState([]);
+  const [mentalIllnesses, setMentalIllnesses]:any = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError]:any = useState(null);
 
@@ -37,6 +37,8 @@ const MentalHealthPage = () => {
     (blog.author && blog.author.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
+  console.log(blogs,'blogs')
+  console.log(mentalIllnesses,'mentalIllnesses')
   return (
     <div className="min-h-screen bg-gray-50 h-full">
       {/* Hero Section with Background Image */}

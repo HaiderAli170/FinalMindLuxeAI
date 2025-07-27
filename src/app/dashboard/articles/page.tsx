@@ -28,6 +28,7 @@ interface MentalHealthBlog {
   description: string;
   content: string;
   imageUrl: string;
+  blogUrl: string;
   tags: string[];
   category: string;
 }
@@ -218,13 +219,14 @@ const researchPapers: ResearchPaper[] = [
 const mentalHealthBlogs: MentalHealthBlog[] = [
   {
     id: 1,
-    title: "10 Daily Habits for Better Mental Health",
+    title: "10 Daily Habits for Better Mental Health ",
     author: "Dr. Sarah Mitchell",
     publishedDate: "2024-01-15",
     readTime: "8 min read",
     description: "Discover simple yet powerful daily habits that can significantly improve your mental well-being and emotional resilience.",
     content: "Mental health is just as important as physical health, and small daily practices can make a big difference. This comprehensive guide covers everything from morning routines to evening wind-down practices that support emotional well-being.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+    imageUrl: "https://tothenetwork.com/wp-content/uploads/2024/01/10-mental-health-tips.png",
+    blogUrl: "https://positivebeginnings.net/10-daily-habits-to-boost-mental-health/",
     tags: ["Daily Habits", "Mental Wellness", "Self-Care", "Lifestyle"],
     category: "Wellness"
   },
@@ -236,7 +238,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "12 min read",
     description: "A comprehensive guide to understanding anxiety disorders, recognizing symptoms, and learning effective coping mechanisms.",
     content: "Anxiety affects millions of people worldwide, but understanding its nature is the first step toward managing it effectively. Learn about different types of anxiety, common triggers, and evidence-based strategies for relief.",
-    imageUrl: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop",
+    imageUrl: "https://mindmattersne.co.uk/wp-content/uploads/2024/04/MMNE-Pinterest-Graded-Exposure-7.png",
+    blogUrl: "https://www.zarwellness.com.au/post/understanding-anxiety-symptoms-coping-strategies-and-the-role-of-counselling-at-zar-wellness",
     tags: ["Anxiety", "Mental Health", "Coping Strategies", "Symptoms"],
     category: "Mental Health"
   },
@@ -248,7 +251,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "10 min read",
     description: "Explore the fascinating connection between sleep quality and mental health, with practical tips for better sleep hygiene.",
     content: "Sleep is not just about rest—it's a crucial component of mental health. This article delves into the science behind sleep's impact on mood, cognition, and emotional regulation, plus actionable steps for better sleep.",
-    imageUrl: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&h=400&fit=crop",
+    imageUrl: "https://tse2.mm.bing.net/th/id/OIP.DqehP3_8qRDOCm-DT9aPzAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+    blogUrl: "https://www.bulbapp.io/p/0ff8d846-f97c-4730-a538-361e053f6d98/the-science-of-sleep-how-rest-impacts-mental-health",
     tags: ["Sleep", "Mental Health", "Sleep Hygiene", "Wellness"],
     category: "Sleep"
   },
@@ -260,7 +264,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "15 min read",
     description: "Everything you need to know about starting a mindfulness meditation practice, from basic techniques to advanced concepts.",
     content: "Mindfulness meditation has been scientifically proven to reduce stress, improve focus, and enhance emotional well-being. This beginner-friendly guide provides step-by-step instructions and practical tips for establishing a sustainable practice.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+    imageUrl: "https://tse2.mm.bing.net/th/id/OIP.UE022ocHv9zq3g-S8eW-7AHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+    blogUrl: "https://howtomeditate.online/how-to-do-meditation-at-home-a-complete-guide-for-beginners/",
     tags: ["Meditation", "Mindfulness", "Stress Relief", "Beginner"],
     category: "Meditation"
   },
@@ -272,7 +277,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "11 min read",
     description: "How social media and digital technology affect depression, and strategies for maintaining mental health in the digital world.",
     content: "The digital age has transformed how we experience and manage depression. This article examines the complex relationship between technology and mental health, offering balanced perspectives and practical solutions.",
-    imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop",
+    imageUrl: "https://tse1.mm.bing.net/th/id/OIP.EDwfCKxB8KXZo88hTDL8ngHaE_?rs=1&pid=ImgDetMain&o=7&rm=3",
+    blogUrl: "https://indagoresearch.org/mental-health-in-the-digital-age-navigating-the-challenges-and-opportunities/",
     tags: ["Depression", "Digital Health", "Social Media", "Technology"],
     category: "Digital Health"
   },
@@ -284,7 +290,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "13 min read",
     description: "Learn the science of resilience and practical strategies to develop emotional strength and adaptability.",
     content: "Resilience is not about avoiding difficulties but about developing the capacity to recover and grow from them. This comprehensive guide explores the psychology of resilience and provides actionable steps for building emotional strength.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.CuPU7MKJVioVP3Qf5uRC-gHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+    blogUrl: "https://www.learning-mind.com/how-to-build-resilience/",
     tags: ["Resilience", "Mental Strength", "Personal Growth", "Psychology"],
     category: "Personal Development"
   },
@@ -296,7 +303,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "9 min read",
     description: "Discover how practicing gratitude can significantly improve your mental health and overall life satisfaction.",
     content: "Gratitude is more than just saying thank you—it's a powerful mental health tool. Research shows that regular gratitude practice can reduce depression, increase happiness, and improve relationships. Learn practical ways to incorporate gratitude into your daily life.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.7XFqX9VDWSxWQCM9e6KKEAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+    blogUrl: "https://www.amandarocheleau.com/post/the-power-of-gratitude-transforming-your-mental-health",
     tags: ["Gratitude", "Happiness", "Mental Health", "Positive Psychology"],
     category: "Positive Psychology"
   },
@@ -308,7 +316,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "14 min read",
     description: "Effective stress management strategies specifically designed for professionals juggling demanding careers and personal lives.",
     content: "Professional stress can take a significant toll on mental health. This article provides evidence-based techniques for managing workplace stress, maintaining work-life balance, and preventing burnout in high-pressure environments.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+    imageUrl: "https://tse1.mm.bing.net/th/id/OIP.4Gw0TP8qFC-UwUsZdTjzuAHaEO?rs=1&pid=ImgDetMain&o=7&rm=3",
+    blogUrl: "https://peaceofmind4wellness.com/stress-management-techniques/",
     tags: ["Stress Management", "Workplace", "Professional", "Burnout Prevention"],
     category: "Workplace Wellness"
   },
@@ -320,7 +329,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "16 min read",
     description: "A comprehensive guide to understanding panic attacks, their causes, and effective management strategies.",
     content: "Panic attacks can be terrifying experiences, but understanding them is the first step toward managing them effectively. This guide covers the science behind panic attacks, common triggers, and proven techniques for prevention and management.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.eXTu1RB9Da7TwvQX0wmR5gHaD1?rs=1&pid=ImgDetMain&o=7&rm=3",
+    blogUrl: "https://www.mcgill.ca/counselling/files/counselling/panic_attack_helpful_hints_1.pdf",
     tags: ["Panic Attacks", "Anxiety", "Mental Health", "Coping"],
     category: "Mental Health"
   },
@@ -332,7 +342,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "12 min read",
     description: "Explore the powerful link between physical activity and mental well-being, with practical exercise recommendations.",
     content: "Exercise is one of the most effective natural treatments for mental health conditions. This article examines the scientific evidence linking physical activity to improved mood, reduced anxiety, and better cognitive function.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+    imageUrl: "https://tse1.mm.bing.net/th/id/OIP.3Yk9DJjMCUOPrkl7mxni-wHaFA?rs=1&pid=ImgDetMain&o=7&rm=3 ",
+    blogUrl: "https://www.verywellmind.com/the-mental-and-physical-health-connection-7255857",
     tags: ["Exercise", "Mental Health", "Physical Activity", "Wellness"],
     category: "Physical Health"
   },
@@ -344,7 +355,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "10 min read",
     description: "Learn how to take a digital detox and reconnect with yourself in our constantly connected world.",
     content: "In our hyperconnected world, taking time away from digital devices is essential for mental health. This guide provides practical strategies for digital detox, setting healthy boundaries with technology, and finding balance in the digital age.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+    imageUrl: "https://tse2.mm.bing.net/th/id/OIP.FQhveJO5S__bEWtE5y5ZTAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+    blogUrl: "https://medium.com/@inhealth.blog/digital-detox-reconnecting-with-yourself-and-reducing-screen-time-0156c29a22d0",
     tags: ["Digital Detox", "Technology", "Mental Health", "Balance"],
     category: "Digital Wellness"
   },
@@ -356,7 +368,8 @@ const mentalHealthBlogs: MentalHealthBlog[] = [
     readTime: "18 min read",
     description: "Understanding trauma, its effects on mental health, and evidence-based approaches to healing and recovery.",
     content: "Trauma can have profound and lasting effects on mental health, but healing is possible. This comprehensive guide explores different types of trauma, their impact on the brain and body, and various therapeutic approaches for recovery.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df=crop",
+    imageUrl: "https://tse4.mm.bing.net/th/id/OIP.HkVcNQgvOJQ32lkVA52SZAHaD4?rs=1&pid=ImgDetMain&o=7&rm=3",
+    blogUrl: "https://www.healthline.com/health/mental-health/trauma-recovery",
     tags: ["Trauma", "Healing", "Recovery", "Mental Health"],
     category: "Trauma Recovery"
   }
@@ -574,10 +587,10 @@ const ArticlesPage = () => {
                   <p className="text-gray-600 mb-4 line-clamp-3">
                     {blog.description}
                   </p>
-                  <button className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                  <a href={blog.blogUrl} target="_blank" rel="noopener noreferrer" className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                     <FiBookOpen className="mr-2" />
                     Read Article
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
